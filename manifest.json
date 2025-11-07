@@ -1,0 +1,23 @@
+{
+  "name": "Fit & Love",
+  "short_name": "Fit & Love",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#0095ff",
+  "description": "Seu aplicativo pessoal para acompanhar treinos e progresso.",
+  "icons": [
+    {
+      "src": "https://i.postimg.cc/bdcpMWxh/icon-192-png.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://i.postimg.cc/8Ctk5ySy/icon-512-png.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+
+

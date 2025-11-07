@@ -1,0 +1,321 @@
+/* Reset Básico e Fontes */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
+  line-height: 1.6;
+  display: flex;
+  min-height: 100vh;
+}
+h1, h2, h3, h4, h5, h6, button, .tab-button, .profile-button { font-family: 'Poppins', sans-serif; } /* Aplica Poppins a títulos e botões */
+
+/* Layout Principal com Sidebar */
+.app-container { display: flex; width: 100%; }
+.sidebar {
+  width: 250px; /* Um pouco mais largo */
+  background-color: #1f1f1f; /* Cor de fundo da sidebar */
+  border-right: 1px solid #303030;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+}
+.sidebar-header { padding: 25px 20px; border-bottom: 1px solid #303030; }
+.sidebar-header h2 { color: #00aaff; font-size: 1.6rem; margin: 0; border: none; text-align: center; }
+.profile-nav { padding: 20px 0; }
+.profile-button {
+  display: block; width: calc(100% - 30px); margin: 8px 15px; padding: 14px 20px;
+  font-size: 1.05rem; font-weight: 500; color: #bdbdbd; background-color: transparent;
+  border: none; border-radius: 8px; text-align: left; cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
+}
+.profile-button:hover { background-color: #383838; color: #ffffff; }
+.profile-button.active { background-color: #0077cc; color: #ffffff; font-weight: 600; }
+.profile-button:active { transform: scale(0.98); } /* Efeito de clique */
+
+/* Conteúdo Principal */
+.main-content { flex-grow: 1; display: flex; flex-direction: column; overflow-y: auto; background-color: #181818; }
+
+/* Cabeçalho do App */
+.app-header {
+  background-color: #1f1f1f; padding: 18px 30px; border-bottom: 1px solid #303030;
+  color: #f1f1f1; box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.app-header .container { display: flex; justify-content: space-between; align-items: center; }
+#welcome-user { font-size: 1.4rem; font-weight: 600; color: #e0e0e0; }
+
+/* Abas de Treino */
+.workout-tabs { display: flex; background-color: #242424; /* Um pouco mais claro */ border-bottom: 1px solid #383838; overflow-x: auto; flex-shrink: 0; }
+.tab-button {
+  font-size: 1rem; padding: 16px 25px; /* Mais padding */ color: #cccccc;
+  border-bottom: 4px solid transparent; font-weight: 600; /* Mais encorpado */ letter-spacing: 0.5px;
+}
+.tab-button:hover { background-color: #3f3f3f; color: #fff; }
+.tab-button.active { color: #00aaff; border-bottom-color: #00aaff; background-color: transparent; }
+
+/* Conteúdo das Abas */
+main { padding: 35px; flex-grow: 1; }
+.tab-content { display: none; opacity: 0; transition: opacity 0.4s ease-in-out; animation: fadeIn 0.5s ease; }
+.tab-content.active { display: block; opacity: 1; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+h2 { /* Título da Seção */
+  font-size: 2.2rem; color: #00aaff; border-bottom: 3px solid #3f3f3f;
+  padding-bottom: 15px; margin-bottom: 35px; font-weight: 700;
+}
+h3.workout-day-title { /* Título do Dia */
+  font-size: 1.6rem; margin-top: 40px; margin-bottom: 20px; color: #bb86fc;
+  border-left: 4px solid #bb86fc; padding-left: 15px;
+}
+
+/* Tabela de Treino */
+.table-wrapper { overflow-x: auto; margin-bottom: 25px; }
+.workout-table {
+  width: 100%; border-collapse: separate; border-spacing: 0;
+  background-color: #2a2a2a; border-radius: 10px; /* Mais arredondado */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); overflow: hidden; /* Garante radius */
+}
+.workout-table th, .workout-table td { padding: 16px 20px; text-align: left; border-bottom: 1px solid #3f3f3f; vertical-align: middle; }
+.workout-table th {
+  background-color: #383838; color: #00c6ff; /* Azul mais vibrante */ font-weight: 700;
+  font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;
+}
+/* Cantos Tabela */
+.workout-table thead th:first-child { border-top-left-radius: 10px; }
+.workout-table thead th:last-child { border-top-right-radius: 10px; }
+.workout-table tbody tr:last-child td { border-bottom: none; }
+.workout-table tbody tr:last-child td:first-child { border-bottom-left-radius: 10px; }
+.workout-table tbody tr:last-child td:last-child { border-bottom-right-radius: 10px; }
+
+/* Novas colunas Checkbox e Exercício */
+.workout-table th.th-check, .workout-table td.td-check { width: 50px; text-align: center; padding-right: 0;}
+.workout-table th.th-exercise { width: 40%; } /* Ajusta largura da coluna exercício */
+.workout-table td.td-exercise { display: flex; align-items: center; gap: 15px; }
+
+/* Checkbox */
+.exercise-checkbox {
+    transform: scale(1.3); /* Aumenta um pouco o tamanho */
+    accent-color: #00aaff; /* Cor do check */
+    cursor: pointer;
+}
+
+/* GIF */
+.exercise-gif-inline {
+  width: 70px; height: 70px; object-fit: contain; border-radius: 6px;
+  background-color: #3f3f3f; /* Fundo se o GIF demorar a carregar */
+}
+
+.carga-input {
+  width: 100px; padding: 10px; background-color: #3f3f3f; border: 1px solid #555;
+  color: #f1f1f1; border-radius: 6px; font-size: 1rem; text-align: center;
+}
+.btn-salvar {
+  background: linear-gradient(45deg, #007bff, #0056b3); /* Gradiente no botão salvar */
+  padding: 9px 15px; font-weight: 600; border-radius: 6px;
+}
+.btn-salvar:hover { background: linear-gradient(45deg, #0056b3, #003d80); }
+.btn-salvar.saved-feedback { background: linear-gradient(45deg, #28a745, #1e7e34); }
+
+/* Perfil */
+.profile-display {
+    background-color: #2a2a2a; padding: 30px; border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); margin-bottom: 30px;
+}
+.profile-display p { font-size: 1.15rem; margin-bottom: 15px; }
+.profile-display strong { color: #00c6ff; }
+#planilha-link-container a { color: #bb86fc; font-weight: bold; }
+#planilha-link-container a:hover { color: #d1b1fc; text-decoration: underline; }
+
+/* Frase Motivacional */
+.quote-style {
+  font-style: italic;
+  text-align: center;
+  margin: 30px auto;
+  color: #a0a0a0;
+  max-width: 600px;
+  font-size: 1.1rem;
+  border-left: 3px solid #0095ff;
+  padding-left: 15px;
+}
+
+/* Cronômetro */
+.timer-container {
+  background-color: #2a2a2a; padding: 2rem; border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); text-align: center;
+  max-width: 400px; margin: 30px auto;
+}
+.timer-container h3 { color: #bb86fc; margin-bottom: 1.5rem; font-size: 1.4rem; }
+#timer-display {
+  font-size: 3.5rem; color: #f1f1f1; margin-bottom: 1.8rem;
+  font-family: 'Poppins', monospace; font-weight: 600; letter-spacing: 1px;
+}
+.timer-controls button {
+  margin: 0 8px; padding: 0.8rem 1.6rem; font-size: 1rem; font-weight: 600;
+}
+/* Cores botões Cronômetro */
+button#startTimer { background-color: #4CAF50; color: white; }
+button#startTimer:hover { background-color: #45a049; }
+button#pauseTimer { background-color: #ffc107; color: #212121; }
+button#pauseTimer:hover { background-color: #e0a800; }
+button#resetTimer { background-color: #6c757d; color: white; }
+button#resetTimer:hover { background-color: #5a6268; }
+
+/* Botão Reset Checkboxes */
+.btn-reset-checks {
+    margin-bottom: 20px; /* Espaço abaixo do botão */
+    background-color: #444; /* Cinza escuro */
+    color: #ccc;
+    font-size: 0.9rem;
+    padding: 8px 15px;
+}
+.btn-reset-checks:hover { background-color: #555; }
+
+/* Botões Gerais */
+.btn { padding: 0.8rem 1.8rem; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; border: none; text-decoration: none; display: inline-block; text-align: center; }
+.btn-primary { background: linear-gradient(45deg, #0095ff, #00c6ff); color: white; box-shadow: 0 3px 8px rgba(0, 149, 255, 0.3); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 5px 12px rgba(0, 149, 255, 0.5); }
+.btn-secondary { background-color: #6c757d; color: white; } /* Exemplo para outros botões */
+.btn-secondary:hover { background-color: #5a6268; }
+
+/* Loader */
+[id$="-loader"] { text-align: center; padding: 40px; font-weight: bold; color: #00aaff; font-size: 1.2rem; }
+
+/* Responsividade */
+@media (max-width: 900px) { /* Ajuste breakpoint */
+  .sidebar { width: 100%; height: auto; border-right: none; border-bottom: 1px solid #303030; flex-direction: row; justify-content: center; /* Centraliza botões */ }
+  .sidebar-header { display: none; }
+  .profile-nav { display: flex; padding: 0; flex-grow: 1; justify-content: center; }
+  .profile-button { width: auto; margin: 0; border-radius: 0; font-size: 0.9rem; padding: 12px 18px; border-bottom: 4px solid transparent; } /* Estilo similar às abas */
+  .profile-button.active { border-bottom-color: #0077cc; background-color: transparent; }
+  .app-container { flex-direction: column; }
+  main { padding: 20px; }
+  .workout-table th, .workout-table td { padding: 12px 10px; font-size: 0.9rem; } /* Menor padding */
+  .carga-input { width: 70px; padding: 8px; }
+  .btn-salvar { padding: 7px 10px; font-size: 0.8rem; }
+  .exercise-gif-inline { width: 50px; height: 50px; }
+  h2 { font-size: 1.8rem; }
+  h3.workout-day-title { font-size: 1.4rem; }
+}
+@media (max-width: 600px) {
+    .workout-tabs { justify-content: space-around;} /* Espaça mais as abas */
+    .tab-button { padding: 12px 10px; font-size: 0.85rem;}
+    #timer-display { font-size: 2.8rem; }
+    .timer-controls button { padding: 0.7rem 1rem; font-size: 0.9rem; }
+    .workout-table { font-size: 0.85rem; } /* Reduz fonte da tabela inteira */
+    .workout-table th, .workout-table td { padding: 10px 8px; }
+    .carga-input { width: 60px; font-size: 0.85rem; }
+}
+/* ======================================================= */
+/* ESTILOS ADICIONADOS PARA A TABELA DE DIETA              */
+/* ======================================================= */
+
+h3.diet-title { /* Título da Dieta */
+  font-size: 1.6rem;
+  margin-top: 40px; /* Mesmo margin-top dos títulos de treino */
+  margin-bottom: 20px;
+  color: #bb86fc; /* Mesma cor roxa */
+  border-left: 4px solid #bb86fc;
+  padding-left: 15px;
+}
+
+/* Ajuste para o conteúdo da célula da dieta */
+.workout-table td.td-diet {
+    line-height: 1.5; /* Melhora a legibilidade de múltiplas linhas */
+    font-size: 0.95rem; /* Um pouco menor para caber mais texto */
+    vertical-align: top; /* Alinha o texto no topo da célula */
+}
+/* ======================================================= */
+/* ESTILOS ADICIONADOS PARA O LOGIN                        */
+/* ======================================================= */
+
+#login-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85); /* Fundo mais escuro */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.login-modal {
+  background-color: #1f1f1f;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+  border: 1px solid #333;
+}
+
+.login-modal h2 {
+  color: #00aaff;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  border: none;
+  padding: 0;
+}
+
+.login-modal p {
+  color: #aaa;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.login-input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 1rem;
+  background-color: #333;
+  border: 1px solid #555;
+  color: #f1f1f1;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+}
+.login-input::placeholder {
+  color: #888;
+}
+
+#login-button {
+  width: 100%;
+  padding: 14px;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+#login-error {
+  color: #ff4d4d; /* Vermelho para erro */
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  height: 1.2em; /* Reserva espaço para a mensagem */
+}
+
+/* Botão de Sair (Logout) */
+#logout-button {
+  display: block;
+  width: calc(100% - 30px);
+  margin: 20px 15px 8px 15px; /* Adiciona margin-top */
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ff6b6b; /* Cor de "perigo" */
+  background-color: rgba(255, 107, 107, 0.1);
+  border: 1px solid #ff6b6b;
+  border-radius: 8px;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#logout-button:hover {
+  background-color: #ff6b6b;
+  color: #1f1f1f;
+  font-weight: 600;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fit & Love</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="login-overlay">
+        <div class="login-modal">
+            <h2>Acessar Perfil</h2>
+            <p>Selecione o perfil e digite o código de acesso.</p>
+            <select id="login-profile-select" class="login-input">
+                <option value="">Selecione o perfil...</option>
+                <option value="diogo">Diogo</option>
+                <option value="tiago">Tiago</option>
+            </select>
+            <input type="password" id="login-code-input" class="login-input" placeholder="Código de Acesso">
+            <button id="login-button" class="btn btn-primary">Entrar</button>
+            <p id="login-error"></p>
+        </div>
+    </div>
+
+    <div class="app-container" style="display: none;">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Perfis</h2>
+            </div>
+            <nav class="profile-nav">
+                <button class="profile-button" data-profile="diogo">Diogo</button>
+                <button class="profile-button" data-profile="tiago">Tiago</button>
+                <button id="logout-button">Sair</button>
+            </nav>
+        </aside>
+
+        <div class="main-content">
+            <header class="app-header">
+                <span id="welcome-user">Selecione um perfil</span>
+            </header>
+
+            <nav class="workout-tabs">
+                <button class="tab-button active" data-tab="perfil">Meu Perfil</button>
+                <button class="tab-button" data-tab="treino-abc">Treino ABC</button>
+                <button class="tab-button" data-tab="treino-abcd">Treino ABCD</button>
+                <button class="tab-button" data-tab="treino-hipertrofia">Treino Hipertrofia</button>
+            </nav>
+
+            <div class="timer-container">
+                <h3>Cronômetro</h3>
+                <div id="timer-display">00:00:00</div>
+                <div class="timer-controls">
+                    <button id="startTimer" class="btn">Iniciar</button>
+                    <button id="pauseTimer" class="btn">Pausar</button>
+                    <button id="resetTimer" class="btn">Zerar</button>
+                </div>
+            </div>
+
+            <main>
+                <section id="perfil-content" class="tab-content active">
+                    <h2>Minhas Metas</h2>
+                    <div id="perfil-loader">Selecione um perfil para carregar as metas.</div>
+                    <div id="perfil-dados" class="profile-display" style="display: none;">
+                    </div>
+                    <p id="motivational-quote" class="quote-style">Carregando frase...</p>
+                    <p id="planilha-link-container" style="display: none; margin-top: 15px;">
+                        <strong>Planilha:</strong>
+                        <a id="planilha-link" href="#" target="_blank">Acessar Planilha Pessoal</a>
+                    </p>
+
+                    <h3 class="diet-title" style="display: none;">Plano Alimentar</h3>
+                    <div id="diet-container" style="display: none;">
+                    </div>
+                </section>
+
+                <section id="treino-abc-content" class="tab-content">
+                    <h2>Treino ABC</h2>
+                    <button class="btn btn-secondary btn-reset-checks" data-target-section="treino-abc-content">Resetar Marcações</button>
+                    <div id="treino-abc-loader">Carregando treino...</div>
+                </section>
+
+                <section id="treino-abcd-content" class="tab-content">
+                    <h2>Treino ABCD</h2>
+                    <button class="btn btn-secondary btn-reset-checks" data-target-section="treino-abcd-content">Resetar Marcações</button>
+                    <div id="treino-abcd-loader">Carregando treino...</div>
+                </section>
+
+                <section id="treino-hipertrofia-content" class="tab-content">
+                    <h2>Treino Hipertrofia</h2>
+                    <button class="btn btn-secondary btn-reset-checks" data-target-section="treino-hipertrofia-content">Resetar Marcações</button>
+                    <div id="treino-hipertrofia-loader">Carregando treino...</div>
+                </section>
+            </main>
+
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="main.js"></script>
+    <script src="pwa-register.js"></script>
+</body>
+</html>
