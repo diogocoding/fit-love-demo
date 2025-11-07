@@ -1,3 +1,15 @@
+// 1. CONFIGURAÇÃO DO FIREBASE (COPIE DO SEU setup.js)
+const firebaseConfig = {
+  apiKey: "AIzaSy... (sua chave aqui)",
+  authDomain: "fit-love-demo.firebaseapp.com",
+  projectId: "fit-love-demo",
+  storageBucket: "fit-love-demo.appspot.com",
+  messagingSenderId: "735744448777",
+  appId: "1:735744448777:web:0a3925a0df07d18cb09bd8"
+};
+
+// 2. INICIALIZE O FIREBASE (O PASSO QUE FALTAVA!)
+firebase.initializeApp(firebaseConfig)
 // =======================================================
 // 1. CONFIGURAÇÃO DO FIREBASE (APENAS FIRESTORE)
 // =======================================================
@@ -702,3 +714,4 @@ document.addEventListener("click", async (e) => {
     }
   }
 });
+
