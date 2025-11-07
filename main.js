@@ -156,7 +156,7 @@ const profiles = {
   },
   tiago: {
     // TROQUE ESTE CÓDIGO!
-    code: "456", // ⚠️ CÓDIGO DE ACESSO (INSEGURO)
+    code: "123", // ⚠️ CÓDIGO DE ACESSO (INSEGURO)
     displayName: "Tiago",
     data: {
       calorias: 3455,
@@ -706,5 +706,6 @@ document.addEventListener("click", async (e) => {
     }
   }
 });
+
 
 
