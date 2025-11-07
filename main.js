@@ -13,14 +13,6 @@ firebase.initializeApp(firebaseConfig)
 // =======================================================
 // 1. CONFIGURAÇÃO DO FIREBASE (APENAS FIRESTORE)
 // =======================================================
-const firebaseConfig = {
-  apiKey: "AIzaSyCO4KtG1vMPqLOBPJ2z2Uw2A2V0iQQeY1k",
-  authDomain: "fit-love-demo.firebaseapp.com",
-  projectId: "fit-love-demo",
-  storageBucket: "fit-love-demo.firebasestorage.app",
-  messagingSenderId: "735744448777",
-  appId: "1:735744448777:web:0a3925a0df07d18cb09bd8",
-};
 const db = firebase.firestore();
 
 // =======================================================
@@ -714,4 +706,5 @@ document.addEventListener("click", async (e) => {
     }
   }
 });
+
 
