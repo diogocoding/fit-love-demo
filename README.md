@@ -8,9 +8,7 @@ Acesse a demo aqui: [https://fit-love-demo.netlify.app/](https://fit-love-demo.n
 **(Use o código de acesso "123" para o perfil "Diogo" para testar)**
 
 ## 📷 Demo Visual
-
-(Recomendo que você grave um GIF rápido do app funcionando e substitua o link abaixo)
-![Demo do Fit & Love](link-para-seu-gif-ou-screenshot.png)
+![Image](https://github.com/user-attachments/assets/633a0e14-8d90-47b8-adf5-4dcbd0a76af9)
 
 ## ✨ Funcionalidades Principais
 
@@ -68,3 +66,4 @@ Criado e desenvolvido por Diogo Nascimento.
 ## 📜 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+
