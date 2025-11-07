@@ -82,3 +82,4 @@ Para rodar este projeto corretamente e ter sua própria base de dados isolada, v
 Isso garante que você possa experimentar o aplicativo com um banco de dados limpo e que a base de dados original não seja alterada.
 
 ---
+
