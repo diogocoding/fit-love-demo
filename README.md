@@ -60,7 +60,7 @@ Este projeto foi construído do zero (sem frameworks JS) para focar nos fundamen
 Criado e desenvolvido por Diogo Nascimento.
 
 * [LinkedIn](https://www.linkedin.com/in/SEU-LINKEDIN-AQUI)
-* [GitHub](https://github.com/SEU-GITHUB-AQUI)
+* [GitHub](https://www.linkedin.com/in/diogo-nascimento-da-silva-diogocoding?utm_source=share_via&utm_content=profile&utm_medium=member_android)
 * [Portfólio](https://diogonascimentoportifolio.netlify.app/)
 
 ## 📜 Licença
